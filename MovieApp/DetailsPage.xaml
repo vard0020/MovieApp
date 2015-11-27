@@ -1,0 +1,128 @@
+﻿<Page
+    x:Class="MovieApp.DetailsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MovieApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="Black">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".2*"/>
+            <RowDefinition Height=".5*"/>
+            <RowDefinition Height=".1*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Image Source="Assets/details_poster.jpg" 
+               Grid.Row="1"/>
+
+        <Button x:Name="About" 
+                   Margin="0,0,0,0"  
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Top" 
+                   Click="About_Button_Click">
+
+            <Image Source="Assets/about_icon.png" Height="30" Width="30">
+            </Image>
+        </Button>
+        
+        
+
+
+
+        <Button x:Name="Back_Button" 
+                   Margin="0,0,0,0"  
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top" 
+                    Click="Back_Button_Click">
+
+            <Image Source="Assets/back_icon.png" 
+                   Height="30" 
+                   Width="30">
+            </Image>
+        </Button>
+        <TextBlock x:Name="Movie_Title" 
+                   HorizontalAlignment="Center" 
+                   Grid.Row="2" 
+                   TextWrapping="Wrap" 
+                   Foreground="White"
+                   Text="Mission Impossible (2015)" 
+                   VerticalAlignment="Top" 
+                   FontWeight="Bold" 
+                   FontSize="18.667"/>
+
+        <StackPanel x:Name="mainStackPanel"
+                    Margin="10,0,10,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Grid.Row="3">
+
+            <StackPanel x:Name="movie_info_stackPanel"
+                    Orientation="Horizontal">
+
+            <TextBlock x:Name="Rating" 
+        	HorizontalAlignment="Left" 
+        	TextWrapping="Wrap" 
+        	Foreground="White"
+        	Text="PG-13"
+        	VerticalAlignment="Top" 
+            FontSize="14.667"/>
+
+
+            <TextBlock x:Name="RunTime" 
+        	HorizontalAlignment="Left" 
+        	TextWrapping="Wrap" 
+        	Foreground="White"
+            Margin="40,0,0,0"
+        	Text="131 min"
+        	VerticalAlignment="Top" 
+            FontSize="14.667"/>
+
+            <TextBlock x:Name="Genre" 
+        	HorizontalAlignment="Left" 
+        	TextWrapping="Wrap" 
+        	Foreground="White"
+            Margin="40,0,0,0"
+        	Text="Action, Adventure"
+        	VerticalAlignment="Top" 
+            FontSize="14.667"/>
+            </StackPanel>
+
+            <TextBlock x:Name="Plot" 
+        	HorizontalAlignment="Left" 
+        	Margin="0,15,0,0" 
+        	TextWrapping="Wrap" 
+        	Foreground="White"
+        	Text="Ethan and team take on their most impossible mission yet, eradicating the Syndicate - an International rogue organization as highly skilled as they are, committed to destroying the IMF." 
+        	VerticalAlignment="Top" 
+            FontSize="13.333"/>
+
+            <TextBlock x:Name="Cast" 
+        	HorizontalAlignment="Left" 
+        	Margin="0,15,0,0" 
+        	TextWrapping="Wrap" 
+        	Foreground="White"
+        	Text="Cast: Tom Cruise, Jeremy Renner, Rebecca Ferguson" 
+        	VerticalAlignment="Top" 
+            FontSize="13.333"/>
+
+            <TextBlock x:Name="Director" 
+        	HorizontalAlignment="Left" 
+        	Margin="0,5,0,0" 
+        	TextWrapping="Wrap" 
+        	Foreground="White"
+        	Text="Director: Christopher McQuarrie" 
+        	VerticalAlignment="Top" 
+            FontSize="13.333"/>
+
+        </StackPanel>
+
+        
+
+      
+        
+    </Grid>
+</Page>
