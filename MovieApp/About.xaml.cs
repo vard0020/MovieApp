@@ -29,7 +29,10 @@ namespace MovieApp
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainPage));
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+            }
         }
 
       
