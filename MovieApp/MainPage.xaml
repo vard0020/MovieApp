@@ -6,11 +6,30 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Page.TopAppBar>
+        <CommandBar Background="DarkRed">
+            <CommandBar.Content>
+                <Grid/>
+            </CommandBar.Content>
+            <AppBarButton 
+                          Foreground="White"
+                          Click="Search_Click"
+                          Name="Search_Icon" Icon="Find"/>
+            <AppBarButton Icon ="AllApps" 
+                          Foreground="White" 
+                          Click="Details_Click"
+                          Name="Details_Icon"/>
+            <AppBarButton Icon="Contact" 
+                          Foreground="White" 
+                          Click="About_Click"
+                          Name="About_Icon"/>
+        </CommandBar>
+    </Page.TopAppBar>
 
     <Grid>
 
         <Grid.Background>
-            <ImageBrush Stretch="UniformToFill" ImageSource="Assets/main_bg.jpg
+            <ImageBrush Stretch="UniformToFill" ImageSource="Assets/main_bg.png
                         " AlignmentY="Top" AlignmentX="Center"/>
         </Grid.Background>
 
@@ -20,23 +39,13 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Button x:Name="About" 
-                   Margin="0,0,0,0"  
-                   HorizontalAlignment="Right"
-                   VerticalAlignment="Top" 
-                   Click="About_Button_Click">
-
-            <Image Source="Assets/about_icon.png" Height="30" Width="30">
-            </Image>
-        </Button>
-
-
         <Button x:Name="Go_Button" 
-                Content="Go" 
+                Content="GO" 
+                FontWeight="Bold"
                 HorizontalAlignment="Center" 
-                Margin="20,0,20,0" 
+                Margin="20,20,20,0" 
                 VerticalAlignment="Top"
-                Background="Gray"
+                Background="DarkRed"
                 Width="150"
                 Foreground="White"
                 Click="Go_Button_Click"
@@ -47,12 +56,13 @@
                  Margin="20,10,20,0"
                  TextWrapping="Wrap" 
                  Foreground="White"
+                 BorderBrush="DarkRed"
                  Text="Search"
                  VerticalAlignment="Top" 
                  Width="220"
                  Grid.Row="1" 
                  GotFocus="SearchBox_GotFocus"/>
-            
+
 
     </Grid>
 </Page>

@@ -6,80 +6,107 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Page.TopAppBar>
+        <CommandBar Background="DarkRed">
+            <CommandBar.Content>
+                <Grid/>
+            </CommandBar.Content>
+            <AppBarButton Icon="Find" 
+                          Label="appbarbutton" 
+                          Click="Search_Click"
+                          Foreground="White"
+                          Name="Search_Icon"/>
+            <AppBarButton Icon="AllApps" 
+                          Label="appbarbutton" 
+                          Foreground="White"
+                          Click="Details_Click"
+                          Name="Details_Icon"/>
+            <AppBarButton Icon="Contact" 
+                          Label="appbarbutton" 
+                          Foreground="White"
+                          Click="About_Click"
+                          Name="About_Icon"/>
 
-    <Grid >
-        <Grid.Background>
-            <ImageBrush Stretch="UniformToFill" ImageSource="Assets/about_bg.jpg
-                        " AlignmentY="Top" AlignmentX="Center"/>
-        </Grid.Background>
-        
+        </CommandBar>
+    </Page.TopAppBar>
+
+    <Grid Background="#404241" >
         <Grid.RowDefinitions>
-            <RowDefinition Height=".2*"/>
-            <RowDefinition Height=".1*"/>
-            <RowDefinition Height=".2*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+
         </Grid.RowDefinitions>
 
         <TextBlock x:Name="Developers" 
-                   HorizontalAlignment="Center" 
+                   HorizontalAlignment="Left" 
                    Margin="20,0,20,0" 
                    TextWrapping="Wrap" 
                    Text="Developers" 
-                   VerticalAlignment="Center" 
-                   Grid.Row="1" 
+                   VerticalAlignment="Bottom" 
+                   Grid.Row="0" 
                    Foreground="White" 
                    FontWeight="Bold" 
                    FontSize="21.333"/>
-        
+
         <TextBlock x:Name="Nune_Name" 
                    HorizontalAlignment="Left" 
-                   Margin="20,16.333,0,0" 
-                   Grid.Row="2" 
+                   Margin="20,25,0,0" 
+                   Grid.Row="1" 
                    TextWrapping="Wrap" 
                    Text="Nune Vardanyan" 
                    Foreground="White"
                    VerticalAlignment="Top" 
                    FontSize="18.667"/>
-        
-        <TextBlock x:Name="Nune_Email" 
-        	HorizontalAlignment="Left" 
-        	Margin="20,42.333,0,0" 
-        	Grid.Row="2" 
-        	TextWrapping="Wrap" 
-        	Text="Email: nun.vardanyan@gmail.com" 
-        	Foreground="White"
-        	VerticalAlignment="Top" FontSize="16"/>
+
+
 
         <TextBlock x:Name="Steve_Name" 
                    HorizontalAlignment="Left" 
-                   Margin="20,16.333,0,0" 
-                   Grid.Row="3" 
+                   Margin="20,110,0,0" 
+                   Grid.Row="1" 
                    TextWrapping="Wrap" 
                    Text="Steve Haskins" 
                    Foreground="White"
                    VerticalAlignment="Top" 
                    FontSize="18.667"/>
+
+
+
+        <HyperlinkButton Content="E-mail:vard0020@algonquinlive.com" 
+                         HorizontalAlignment="Left" 
+                         Margin="20,50,0,0" 
+                         Grid.Row="1" 
+                         VerticalAlignment="Top" 
+                         Click="Nune_Email_Button_Click"/>
+
+        <HyperlinkButton Content="E-mail:stevedore09@gmail.com" 
+                         HorizontalAlignment="Left" 
+                         Margin="20,130,0,0" 
+                         Grid.Row="1" 
+                         VerticalAlignment="Top" Click="Steve_Email_Button_Click"/>
+
+        <TextBlock x:Name="Version" 
+                   HorizontalAlignment="Left" 
+                   Margin="20,0,20,0" 
+                   TextWrapping="Wrap" 
+                   Text="Version" 
+                   VerticalAlignment="Top" 
+                   Grid.Row="2" 
+                   Foreground="White" 
+                   FontWeight="Bold" 
+                   FontSize="21.333"/>
         
-        <TextBlock x:Name="Steve_Email" 
+        <TextBlock x:Name="Version_Number" 
         	HorizontalAlignment="Left" 
-        	Margin="20,42.333,0,0" 
-        	Grid.Row="3" 
+        	Margin="20,33,0,0" 
+        	Grid.Row="2" 
         	TextWrapping="Wrap" 
-        	Text="Email: stevedore09@gmail.com" 
+        	Text="1.0.0" 
         	Foreground="White"
         	VerticalAlignment="Top" 
-            FontSize="16"/>
+        	FontSize="16.667"/>
 
-        <Button x:Name="Back_Button" 
-                   Margin="0,0,0,0"  
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Top" 
-                    Click="Back_Button_Click">
-
-            <Image Source="Assets/back_icon.png" 
-                   Height="30" 
-                   Width="30">
-            </Image>
-        </Button>
     </Grid>
 </Page>

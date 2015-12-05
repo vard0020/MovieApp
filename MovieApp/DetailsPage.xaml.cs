@@ -8,6 +8,8 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -32,7 +34,11 @@ namespace MovieApp
             StringBuilder sb = new StringBuilder();
             StringWriter sw = new StringWriter(sb);
 
-            //creating a fake JSON. The real JSON will be go tten from an online source. This is just filler info.
+            Details_Icon.Background = new SolidColorBrush(Colors.Gray);
+            Search_Icon.Background = new SolidColorBrush();
+            About_Icon.Background = new SolidColorBrush();
+
+            //creating a fake JSON. The real JSON will be go stten from an online source. This is just filler info.
             using (JsonWriter writer = new JsonTextWriter(sw))
             {
 
@@ -58,7 +64,7 @@ namespace MovieApp
 
             var StringJson = sb.ToString();
 
-                var jObj = JObject.Parse(StringJson);
+            var jObj = JObject.Parse(StringJson);
 
             //setting poster
             var poster = jObj.SelectToken("poster");
@@ -108,10 +114,37 @@ namespace MovieApp
 
         }
 
-        private void Back_Button_Click(object sender, RoutedEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            var currentView = SystemNavigationManager.GetForCurrentView();
+            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            currentView.BackRequested += backButton_Tapped;
+
+            base.OnNavigatedTo(e);
+        }
+
+        private void backButton_Tapped(object sender, BackRequestedEventArgs e)
+        {
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+                e.Handled = true;
+            }
+        }
+
+        private void Search_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(MainPage));
+        }
 
+        private void Details_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(DetailsPage));
+        }
+
+        private void About_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(About));
         }
     }
 }
